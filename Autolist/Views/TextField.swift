@@ -11,6 +11,15 @@ class TextField: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     
+    init(title: String) {
+        super.init(frame: UIScreen.main.bounds);
+        setup(title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
@@ -23,7 +32,7 @@ class TextField: UITextField {
         return bounds.inset(by: padding)
     }
     
-    func setup(_ placeholder: String) {
+    private func setup(_ placeholder: String) {
         let customFont = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
         
         translatesAutoresizingMaskIntoConstraints = false

@@ -8,8 +8,17 @@
 import UIKit
 
 class ActionButton: UIButton {
+    
+    init(title: String) {
+        super.init(frame: UIScreen.main.bounds);
+        setup(title: title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-    func setup(title: String) {
+    private func setup(title: String) {
         let customFont = UIFont(name: "Rubik-Medium", size: UIFont.buttonFontSize)
         
         translatesAutoresizingMaskIntoConstraints = false

@@ -14,6 +14,7 @@
 		9F5E1C5227B95FD5006F5F5E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E1C4D27B95FD5006F5F5E /* Rubik-Bold.ttf */; };
 		9F5E1C5927B978B0006F5F5E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5827B978B0006F5F5E /* ActionButton.swift */; };
 		9F5E1C5C27B98304006F5F5E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5B27B98304006F5F5E /* TextField.swift */; };
+		9F5E1C5E27BA4E26006F5F5E /* SignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */; };
 		9FBAF32027B8D5DB006FB1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAF31F27B8D5DB006FB1FB /* AppDelegate.swift */; };
 		9FBAF32227B8D5DB006FB1FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAF32127B8D5DB006FB1FB /* SceneDelegate.swift */; };
 		9FBAF32427B8D5DB006FB1FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAF32327B8D5DB006FB1FB /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		9F5E1C4D27B95FD5006F5F5E /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		9F5E1C5827B978B0006F5F5E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		9F5E1C5B27B98304006F5F5E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLabel.swift; sourceTree = "<group>"; };
 		9FBAF31C27B8D5DB006FB1FB /* Autolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBAF31F27B8D5DB006FB1FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBAF32127B8D5DB006FB1FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				9F5E1C5827B978B0006F5F5E /* ActionButton.swift */,
 				9F5E1C5B27B98304006F5F5E /* TextField.swift */,
+				9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5E1C5E27BA4E26006F5F5E /* SignUpLabel.swift in Sources */,
 				9FBAF32427B8D5DB006FB1FB /* LoginViewController.swift in Sources */,
 				9FBAF32027B8D5DB006FB1FB /* AppDelegate.swift in Sources */,
 				9FBAF32227B8D5DB006FB1FB /* SceneDelegate.swift in Sources */,

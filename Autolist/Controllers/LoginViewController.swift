@@ -9,36 +9,29 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private var loginTextField: TextField = {
-        let tf = TextField()
-        tf.setup("Login")
-        
-        return tf
-    }()
-    
-    private var passwordTextField: TextField = {
-        let tf = TextField()
-        tf.setup("Password")
-        tf.isSecureTextEntry = true
-        
-        return tf
-    }()
-    
-    private var signInButton: ActionButton = {
-        let button = ActionButton()
-        button.setup(title: "Sign In")
-        
-        return button
-    }()
+    private var loginTextField = TextField(title: "Login")
+    private var passwordTextField = TextField(title: "Password")
+    private var signInButton = ActionButton(title: "Log in")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configVC()
+        addSubviews()
+        setConstrains()
+    }
+    
+    private func configVC() {
         view.backgroundColor = .systemBackground
-        
+        passwordTextField.isSecureTextEntry = true
+    }
+    
+    private func addSubviews() {
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
         view.addSubview(signInButton)
-        
+    }
+    
+    private func setConstrains() {
         loginTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
         loginTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         loginTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
