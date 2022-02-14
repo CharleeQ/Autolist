@@ -12,41 +12,42 @@ class LoginViewController: UIViewController {
     private var loginTextField = TextField(title: "Login")
     private var passwordTextField = TextField(title: "Password")
     private var signInButton = ActionButton(title: "Log in")
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configVC()
-        addSubviews()
-        setConstrains()
-    }
+    private var appleSIButton = SignInButton(type: .apple)
+    private var googleSIButton = SignInButton(type: .google)
     
-    private func configVC() {
+    override func loadView() {
+        super.loadView()
         view.backgroundColor = .systemBackground
         passwordTextField.isSecureTextEntry = true
     }
     
-    private func addSubviews() {
-        view.addSubview(loginTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(signInButton)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configStackView()
     }
     
-    private func setConstrains() {
-        loginTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        loginTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        loginTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
-        loginTextField.centerYAnchor.constraint(equalTo: passwordTextField.centerYAnchor, constant: -52).isActive = true
+    private func configStackView() {
+        let insideSV = UIStackView(arrangedSubviews: [appleSIButton, googleSIButton])
+        insideSV.axis = .horizontal
+        insideSV.distribution = .fillEqually
+        insideSV.spacing = 16
+        insideSV.translatesAutoresizingMaskIntoConstraints = false
+        let stackView = UIStackView(arrangedSubviews: [loginTextField,
+                                                       passwordTextField,
+                                                       signInButton,
+                                                       insideSV])
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
         
-        passwordTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
-        passwordTextField.centerYAnchor.constraint(equalTo: signInButton.centerYAnchor, constant: -52).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+        ])
         
-        signInButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        signInButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        signInButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
-        signInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
-    
 }
 

@@ -37,7 +37,6 @@ class TextField: UITextField {
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .secondarySystemBackground
-        
         self.placeholder = placeholder
         font = customFont
         layer.cornerRadius = 4.0
