@@ -9,31 +9,65 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // MARK: - UI elements
+    
     private var loginTextField = TextField(title: "Login")
-    private var passwordTextField = TextField(title: "Password")
+    private var passwordTextField: TextField = {
+        let tf = TextField(title: "Password")
+        tf.isSecureTextEntry = true
+        
+        return tf
+    }()
     private var signInButton = ActionButton(title: "Log in")
-    private var forgotPasswordLabel = UILabel()
+    private var forgotPasswordLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Forgot password?"
+        label.textAlignment = .right
+        label.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
     private var stackView: UIStackView!
     private var signUpLabel = SignUpLabel()
+    private var headLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Welcome!"
+        label.font = UIFont(name: "Rubik-Bold", size: 40)
+        label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    private var subheadLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Please, sign in with login."
+        label.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
+        label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    // MARK: - viewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
-        configStackView()
         setViewsConstraints()
     }
+    
+    // MARK: - Configuration UI methods
     
     private func configVC() {
         view.backgroundColor = .systemBackground
         
-        passwordTextField.isSecureTextEntry = true
-        
-        forgotPasswordLabel.text = "Forgot password?"
-        forgotPasswordLabel.textAlignment = .right
-        forgotPasswordLabel.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
-        forgotPasswordLabel.textColor = .secondaryLabel
+        configStackView()
         
         view.addSubview(signUpLabel)
+        view.addSubview(headLabel)
+        view.addSubview(subheadLabel)
     }
     
     private func configStackView() {
@@ -53,13 +87,27 @@ class LoginViewController: UIViewController {
             signInButton.heightAnchor.constraint(equalToConstant: 50),
             loginTextField.heightAnchor.constraint(equalToConstant: 44),
             passwordTextField.heightAnchor.constraint(equalToConstant: 44),
+            
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            signUpLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            signUpLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            signUpLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            stackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            stackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            
+            signUpLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            signUpLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            signUpLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            
+            headLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            headLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            headLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            
+            subheadLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            subheadLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            subheadLabel.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 8)
         ])
     }
+    
+    // MARK: - Work with datas
+    
+    
 }
 

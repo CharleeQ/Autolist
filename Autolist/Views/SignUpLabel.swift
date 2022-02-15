@@ -18,7 +18,7 @@ class SignUpLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
+    private func setup() {
         textAlignment = .center
         let fontSize: CGFloat = 14
         let textString: NSMutableAttributedString
