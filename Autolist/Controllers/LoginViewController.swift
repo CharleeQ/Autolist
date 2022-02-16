@@ -35,7 +35,6 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Welcome!"
         label.font = UIFont(name: "Rubik-Bold", size: 40)
-        label.textColor = .label
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -44,7 +43,6 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Please, sign in with login."
         label.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
-        label.textColor = .label
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -55,6 +53,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
+        addSubviews()
         setViewsConstraints()
     }
     
@@ -62,24 +61,28 @@ class LoginViewController: UIViewController {
     
     private func configVC() {
         view.backgroundColor = .systemBackground
-        
+        hideKeyboardWhenTappedAround()
         configStackView()
-        
+    }
+    
+    private func addSubviews() {
         view.addSubview(signUpLabel)
         view.addSubview(headLabel)
         view.addSubview(subheadLabel)
+        view.addSubview(stackView)
     }
     
     private func configStackView() {
-        stackView = UIStackView(arrangedSubviews: [loginTextField,
-                                                       passwordTextField,
-                                                       signInButton,
-                                                       forgotPasswordLabel])
+        stackView = UIStackView(arrangedSubviews: [
+            loginTextField,
+            passwordTextField,
+            signInButton,
+            forgotPasswordLabel
+        ])
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
     }
     
     private func setViewsConstraints() {
