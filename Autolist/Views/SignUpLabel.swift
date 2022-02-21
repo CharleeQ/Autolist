@@ -10,7 +10,7 @@ import UIKit
 class SignUpLabel: UILabel {
     
     init() {
-        super.init(frame: UIScreen.main.bounds);
+        super.init(frame: UIScreen.main.bounds)
         setup()
     }
     

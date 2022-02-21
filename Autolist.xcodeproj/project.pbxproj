@@ -17,6 +17,7 @@
 		9F5E1C5E27BA4E26006F5F5E /* SignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */; };
 		9F7B57EB27BC42FF003F2DFD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B57EA27BC42FE003F2DFD /* UIViewController.swift */; };
 		9F7B57ED27BD698E003F2DFD /* GarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B57EC27BD698E003F2DFD /* GarageTableViewController.swift */; };
+		9F7B57EF27C1470B003F2DFD /* GarageCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B57EE27C1470B003F2DFD /* GarageCarTableViewCell.swift */; };
 		9FBAF32027B8D5DB006FB1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAF31F27B8D5DB006FB1FB /* AppDelegate.swift */; };
 		9FBAF32227B8D5DB006FB1FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAF32127B8D5DB006FB1FB /* SceneDelegate.swift */; };
 		9FBAF32427B8D5DB006FB1FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAF32327B8D5DB006FB1FB /* LoginViewController.swift */; };
@@ -35,6 +36,7 @@
 		9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLabel.swift; sourceTree = "<group>"; };
 		9F7B57EA27BC42FE003F2DFD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		9F7B57EC27BD698E003F2DFD /* GarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewController.swift; sourceTree = "<group>"; };
+		9F7B57EE27C1470B003F2DFD /* GarageCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCarTableViewCell.swift; sourceTree = "<group>"; };
 		9FBAF31C27B8D5DB006FB1FB /* Autolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBAF31F27B8D5DB006FB1FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBAF32127B8D5DB006FB1FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				9F5E1C5827B978B0006F5F5E /* ActionButton.swift */,
 				9F5E1C5B27B98304006F5F5E /* TextField.swift */,
 				9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */,
+				9F7B57EE27C1470B003F2DFD /* GarageCarTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7B57EF27C1470B003F2DFD /* GarageCarTableViewCell.swift in Sources */,
 				9F7B57ED27BD698E003F2DFD /* GarageTableViewController.swift in Sources */,
 				9F7B57EB27BC42FF003F2DFD /* UIViewController.swift in Sources */,
 				9F5E1C5E27BA4E26006F5F5E /* SignUpLabel.swift in Sources */,
