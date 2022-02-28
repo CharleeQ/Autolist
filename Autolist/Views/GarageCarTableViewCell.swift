@@ -14,29 +14,31 @@ class GarageCarTableViewCell: UITableViewCell {
     private var cardView: UIView = {
         let v = UIView()
         v.backgroundColor = .secondarySystemBackground
-        v.layer.cornerRadius = 4
         v.translatesAutoresizingMaskIntoConstraints = false
+        v.layer.cornerRadius = 4
         
         return v
     }()
     var carNameLabel: UILabel = {
         let l = UILabel()
-        l.font = UIFont(name: "Rubik-Bold", size: UIFont.buttonFontSize)
+        l.font = .preferredFont(forTextStyle: .headline, compatibleWith: .current)
+        l.translatesAutoresizingMaskIntoConstraints = false
+        
         
         return l
     }()
     var numberPlate: UILabel = {
         let l = UILabel()
-        l.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
+        l.font = .preferredFont(forTextStyle: .caption1, compatibleWith: .current)
+        l.translatesAutoresizingMaskIntoConstraints = false
         
         return l
     }()
-    private var stackView: UIStackView!
     
     // MARK: - Init
     
-    init() {
-        super.init(style: .default, reuseIdentifier: "garageCarCell")
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
     
@@ -44,27 +46,21 @@ class GarageCarTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     // MARK: - Setup method
     
     private func setup() {
+        configCardView()
         addSubview(cardView)
-        configStackView()
         setCellConstraints()
     }
     
+    
     // MARK: - Configuration
     
-    private func configStackView() {
-        stackView = UIStackView(arrangedSubviews: [
-            carNameLabel,
-            numberPlate
-        ])
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 4
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        cardView.addSubview(stackView)
+    private func configCardView() {
+        cardView.addSubview(carNameLabel)
+        cardView.addSubview(numberPlate)
     }
     
     private func setCellConstraints() {
@@ -74,11 +70,16 @@ class GarageCarTableViewCell: UITableViewCell {
             cardView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5),
             
+            carNameLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
+            carNameLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 15),
+            carNameLabel.rightAnchor.constraint(equalTo: cardView.rightAnchor, constant: 15),
+            carNameLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 5),
+//
+//            numberPlate.topAnchor.constraint(equalTo: carNameLabel.bottomAnchor, constant: 5),
+//            numberPlate.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 15),
+//            numberPlate.rightAnchor.constraint(equalTo: cardView.rightAnchor, constant: 15),
+//            numberPlate.bottomAnchor.constraint(equalTo: cardView.topAnchor, constant: 10)
             
-            stackView.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 15),
-            stackView.rightAnchor.constraint(equalTo: cardView.rightAnchor, constant: 15),
-            stackView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 10)
         ])
     }
     

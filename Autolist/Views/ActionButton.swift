@@ -19,12 +19,10 @@ class ActionButton: UIButton {
     }
 
     private func setup(title: String) {
-        let customFont = UIFont(name: "Rubik-Medium", size: UIFont.buttonFontSize)
-        
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(named: "AccentColor")
         setTitle(title, for: .normal)
-        titleLabel?.font = customFont
+        //titleLabel?.font = .preferredFont(forTextStyle: .headline, compatibleWith: .current)
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 4.0
     }

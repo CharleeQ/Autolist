@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         
         label.text = "Forgot password?"
         label.textAlignment = .right
-        label.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
         label.textColor = .secondaryLabel
         
         return label
@@ -34,7 +33,7 @@ class LoginViewController: UIViewController {
     private var headLabel: UILabel = {
         let label = UILabel()
         label.text = "Welcome!"
-        label.font = UIFont(name: "Rubik-Bold", size: 40)
+        label.font = .boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .largeTitle, compatibleWith: .current).pointSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -42,7 +41,6 @@ class LoginViewController: UIViewController {
     private var subheadLabel: UILabel = {
         let label = UILabel()
         label.text = "Please, sign in with login."
-        label.font = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label

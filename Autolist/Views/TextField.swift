@@ -33,12 +33,9 @@ class TextField: UITextField {
     }
     
     private func setup(_ placeholder: String) {
-        let customFont = UIFont(name: "Rubik-Regular", size: UIFont.labelFontSize)
-        
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .secondarySystemBackground
         self.placeholder = placeholder
-        font = customFont
         layer.cornerRadius = 4.0
         
     }

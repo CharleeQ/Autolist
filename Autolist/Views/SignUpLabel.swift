@@ -22,12 +22,7 @@ class SignUpLabel: UILabel {
         textAlignment = .center
         let fontSize: CGFloat = 14
         let textString: NSMutableAttributedString
-        let font: UIFont
-        if let customFont = UIFont(name: "Rubik-Regular", size: UIFont.smallSystemFontSize) {
-            font = customFont
-        } else {
-            font = UIFont.systemFont(ofSize: fontSize, weight: .light)
-        }
+        let font = UIFont.systemFont(ofSize: fontSize, weight: .light)
         textString = NSMutableAttributedString(string: "Don’t have an account? Sign up.",
                                                attributes: [
                                                 .font: font,

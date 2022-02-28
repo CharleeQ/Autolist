@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F5E1C4E27B95FD5006F5F5E /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E1C4927B95FD5006F5F5E /* Rubik-Regular.ttf */; };
-		9F5E1C4F27B95FD5006F5F5E /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E1C4A27B95FD5006F5F5E /* Rubik-SemiBold.ttf */; };
-		9F5E1C5027B95FD5006F5F5E /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E1C4B27B95FD5006F5F5E /* Rubik-Medium.ttf */; };
-		9F5E1C5127B95FD5006F5F5E /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E1C4C27B95FD5006F5F5E /* Rubik-ExtraBold.ttf */; };
-		9F5E1C5227B95FD5006F5F5E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5E1C4D27B95FD5006F5F5E /* Rubik-Bold.ttf */; };
 		9F5E1C5927B978B0006F5F5E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5827B978B0006F5F5E /* ActionButton.swift */; };
 		9F5E1C5C27B98304006F5F5E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5B27B98304006F5F5E /* TextField.swift */; };
 		9F5E1C5E27BA4E26006F5F5E /* SignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */; };
@@ -26,11 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F5E1C4927B95FD5006F5F5E /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
-		9F5E1C4A27B95FD5006F5F5E /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
-		9F5E1C4B27B95FD5006F5F5E /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
-		9F5E1C4C27B95FD5006F5F5E /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
-		9F5E1C4D27B95FD5006F5F5E /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		9F5E1C5827B978B0006F5F5E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		9F5E1C5B27B98304006F5F5E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		9F5E1C5D27BA4E26006F5F5E /* SignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLabel.swift; sourceTree = "<group>"; };
@@ -87,25 +77,12 @@
 		9F5E1C4727B957B8006F5F5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F5E1C4827B95E08006F5F5E /* Fonts */,
 				9FBAF31F27B8D5DB006FB1FB /* AppDelegate.swift */,
 				9FBAF32127B8D5DB006FB1FB /* SceneDelegate.swift */,
 				9FBAF32827B8D5E0006FB1FB /* Assets.xcassets */,
 				9FBAF32A27B8D5E0006FB1FB /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		9F5E1C4827B95E08006F5F5E /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				9F5E1C4D27B95FD5006F5F5E /* Rubik-Bold.ttf */,
-				9F5E1C4C27B95FD5006F5F5E /* Rubik-ExtraBold.ttf */,
-				9F5E1C4B27B95FD5006F5F5E /* Rubik-Medium.ttf */,
-				9F5E1C4927B95FD5006F5F5E /* Rubik-Regular.ttf */,
-				9F5E1C4A27B95FD5006F5F5E /* Rubik-SemiBold.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9F7B57E927BC42EA003F2DFD /* Extensions */ = {
@@ -204,12 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FBAF32C27B8D5E0006FB1FB /* LaunchScreen.storyboard in Resources */,
-				9F5E1C4E27B95FD5006F5F5E /* Rubik-Regular.ttf in Resources */,
 				9FBAF32927B8D5E0006FB1FB /* Assets.xcassets in Resources */,
-				9F5E1C4F27B95FD5006F5F5E /* Rubik-SemiBold.ttf in Resources */,
-				9F5E1C5227B95FD5006F5F5E /* Rubik-Bold.ttf in Resources */,
-				9F5E1C5127B95FD5006F5F5E /* Rubik-ExtraBold.ttf in Resources */,
-				9F5E1C5027B95FD5006F5F5E /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
