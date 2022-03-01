@@ -16,30 +16,28 @@ class GarageCarTableViewCell: UITableViewCell {
         v.backgroundColor = .secondarySystemBackground
         v.translatesAutoresizingMaskIntoConstraints = false
         v.layer.cornerRadius = 4
-        
         return v
     }()
     var carNameLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .headline, compatibleWith: .current)
         l.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         return l
     }()
     var numberPlate: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .caption1, compatibleWith: .current)
         l.translatesAutoresizingMaskIntoConstraints = false
-        
         return l
     }()
+    var verticalStackView: UIStackView!
     
     // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -50,8 +48,8 @@ class GarageCarTableViewCell: UITableViewCell {
     // MARK: - Setup method
     
     private func setup() {
+        clipsToBounds = true
         configCardView()
-        addSubview(cardView)
         setCellConstraints()
     }
     
@@ -59,27 +57,30 @@ class GarageCarTableViewCell: UITableViewCell {
     // MARK: - Configuration
     
     private func configCardView() {
-        cardView.addSubview(carNameLabel)
-        cardView.addSubview(numberPlate)
+        verticalStackView = UIStackView(arrangedSubviews: [
+            carNameLabel,
+            numberPlate
+        ])
+        verticalStackView.axis = .vertical
+        verticalStackView.distribution = .fill
+        verticalStackView.spacing = 4
+        verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+
+        cardView.addSubview(verticalStackView)
+        contentView.addSubview(cardView)
     }
     
     private func setCellConstraints() {
         NSLayoutConstraint.activate([
-            cardView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-            cardView.rightAnchor.constraint(equalTo: rightAnchor, constant: 15),
-            cardView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5),
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             
-            carNameLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
-            carNameLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 15),
-            carNameLabel.rightAnchor.constraint(equalTo: cardView.rightAnchor, constant: 15),
-            carNameLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 5),
-//
-//            numberPlate.topAnchor.constraint(equalTo: carNameLabel.bottomAnchor, constant: 5),
-//            numberPlate.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: 15),
-//            numberPlate.rightAnchor.constraint(equalTo: cardView.rightAnchor, constant: 15),
-//            numberPlate.bottomAnchor.constraint(equalTo: cardView.topAnchor, constant: 10)
-            
+            verticalStackView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 15),
+            verticalStackView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -15),
+            verticalStackView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 15),
+            verticalStackView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -15)
         ])
     }
     
@@ -88,5 +89,4 @@ class GarageCarTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
 }

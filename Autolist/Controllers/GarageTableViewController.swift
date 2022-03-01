@@ -13,8 +13,7 @@ class GarageTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(GarageCarTableViewCell.self, forCellReuseIdentifier: "garageItemCell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 55
+        tableView.separatorStyle = .none
     }
     
     // MARK: - Table view data source
