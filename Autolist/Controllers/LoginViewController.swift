@@ -106,9 +106,5 @@ class LoginViewController: UIViewController {
             subheadLabel.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 8)
         ])
     }
-    
-    // MARK: - Work with datas
-    
-    
 }
 

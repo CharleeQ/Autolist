@@ -30,14 +30,13 @@ class GarageCarTableViewCell: UITableViewCell {
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
-    var verticalStackView: UIStackView!
+    private var verticalStackView: UIStackView!
     
     // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -48,7 +47,6 @@ class GarageCarTableViewCell: UITableViewCell {
     // MARK: - Setup method
     
     private func setup() {
-        clipsToBounds = true
         configCardView()
         setCellConstraints()
     }
@@ -73,8 +71,8 @@ class GarageCarTableViewCell: UITableViewCell {
     private func setCellConstraints() {
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             
             verticalStackView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 15),
@@ -86,7 +84,5 @@ class GarageCarTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
 }
