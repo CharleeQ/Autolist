@@ -11,7 +11,6 @@ class GarageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(GarageCarTableViewCell.self, forCellReuseIdentifier: "garageItemCell")
         tableView.separatorStyle = .none
     }
