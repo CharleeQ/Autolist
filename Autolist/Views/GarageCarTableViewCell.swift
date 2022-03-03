@@ -21,6 +21,7 @@ class GarageCarTableViewCell: UITableViewCell {
     var carNameLabel: UILabel = {
         let l = UILabel()
         l.font = .preferredFont(forTextStyle: .headline, compatibleWith: .current)
+        l.numberOfLines = 2
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
@@ -31,6 +32,15 @@ class GarageCarTableViewCell: UITableViewCell {
         return l
     }()
     private var verticalStackView: UIStackView!
+    private var horizontalStackView: UIStackView!
+    var carImage: UIImageView = {
+        let iv = UIImageView(image: UIImage(named: "car"))
+        iv.contentMode = .scaleAspectFit
+        iv.layer.cornerRadius = 4
+        iv.backgroundColor = .systemBackground
+        
+        return iv
+    }()
     
     // MARK: - Init
     
@@ -62,9 +72,14 @@ class GarageCarTableViewCell: UITableViewCell {
         verticalStackView.axis = .vertical
         verticalStackView.distribution = .fill
         verticalStackView.spacing = 4
-        verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStackView = UIStackView(arrangedSubviews: [verticalStackView, carImage])
+        horizontalStackView.axis = .horizontal
+        horizontalStackView.distribution = .fillEqually
+        horizontalStackView.spacing = 15
+        horizontalStackView.alignment = .leading
+        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
 
-        cardView.addSubview(verticalStackView)
+        cardView.addSubview(horizontalStackView)
         contentView.addSubview(cardView)
     }
     
@@ -75,10 +90,10 @@ class GarageCarTableViewCell: UITableViewCell {
             cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             
-            verticalStackView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 15),
-            verticalStackView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -15),
-            verticalStackView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 15),
-            verticalStackView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -15)
+            horizontalStackView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 15),
+            horizontalStackView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -15),
+            horizontalStackView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 15),
+            horizontalStackView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -15)
         ])
     }
     
