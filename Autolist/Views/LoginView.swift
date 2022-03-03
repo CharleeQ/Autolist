@@ -1,9 +1,3 @@
-//
-//  LoginView.swift
-//  Autolist
-//
-//  Created by Кирилл Какареко on 02.03.2022.
-//
 
 import UIKit
 
